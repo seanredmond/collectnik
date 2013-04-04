@@ -1,5 +1,12 @@
 require "collectnik"
 
+ITEM_1582665 = JSON.parse(%q<{
+  "uuid":"510d47e3-6c3e-a3d9-e040-e00a18064a99",
+  "imageID":"1582665",
+  "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1582665",
+  "title":"Fra Angelico, Windsor, 163 verso. [St. Lawrence, a woman holding a child, and a youth with clasped hands.]"
+}>)
+
 MODS_1582665 = JSON.parse(%q<{
   "nyplAPI":{
     "request":{
