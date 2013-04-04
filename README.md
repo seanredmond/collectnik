@@ -1,6 +1,6 @@
 # Collectnik
 
-TODO: Write a gem description
+Ruby client for the [NYPL Digital Collections API](http://api.repo.nypl.org/api_documentation)
 
 ## Installation
 
@@ -18,7 +18,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require "collectnik"
+
+    # Initialize a client
+    client = Collectnik::Client.new('yourtoken')
+
+    # Return Captures for a UUID
+    client.items('5fa75050-c6c7-012f-e24b-58d385a7bc34')
+
+    # Return UUID for local identifier
+    client.local('hades','1017240')
+
+    # Search in MODS field
+    client.search('flying', {'field' => 'topic'})
+
+    # Search across all MODS fields
+    client.search('birds')
+
+    # Return MODS record for a capture UUID
+    client.mods('510d47e2-8e15-a3d9-e040-e00a18064a99')
+
+## TODO
+
+The above methods all just return hashes created from JSON responses. They 
+should instead return objects with any methods necessary to make accessing the 
+data more easy.
 
 ## Contributing
 
