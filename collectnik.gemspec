@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Collectnik::VERSION
   gem.authors       = ["Sean Redmond"]
   gem.email         = ["github-smr@sneakemail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Ruby client for the NYPL Digital Collections API}
+  gem.summary       = %q{Ruby client for the NYPL Digital Collections API}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
