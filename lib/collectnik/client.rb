@@ -25,7 +25,7 @@ module Collectnik
     end
 
     def mods(id, params = {})
-      get_endpoint("mods/#{id}", params)
+      Collectnik::Mods.new(self, get_endpoint("mods/#{id}", params))
     end
 
     def search(term, params = {})
