@@ -38,6 +38,9 @@ module Collectnik
       path = "#{@@base}/#{@@version_path}/items/#{path}"
       response = @conn.get path, params
       JSON.parse(response.body)
+
+      # TODO: Handle errors like
+      #    Faraday::Error::TimeoutError
     end
   end
 end
