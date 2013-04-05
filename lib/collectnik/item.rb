@@ -22,7 +22,7 @@ module Collectnik
     end
 
     def mods
-      Collectnik::Mods.new(@client, @client.mods(uuid))
+      @client.mods(uuid)
     end
   end
 end

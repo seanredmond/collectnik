@@ -4,8 +4,8 @@ require "spec_helper"
 
 describe Collectnik::Item do
   before :each do
-    @client_double = double(Collectnik::Client, :mods => MODS_1582665)
-    @item = Collectnik::Item.new(@client_double, ITEM_1582665)
+    @client = Collectnik::Client.new('12345')
+    @item = Collectnik::Item.new(@client, ITEM_1582665)
   end
 
   describe "#uuid" do
@@ -33,6 +33,10 @@ describe Collectnik::Item do
   end
 
   describe "#mods" do
+    before :each do
+      @client.stub(:get_endpoint) {MODS_1582665}
+    end
+
     it "returns a Mods object" do
       @item.mods.should be_an_instance_of Collectnik::Mods
     end
