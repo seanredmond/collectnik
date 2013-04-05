@@ -15,7 +15,10 @@ module Collectnik
     end
 
     def items(id, params = {})
-      get_endpoint(id, {})
+      # Get titles in items by default
+      params = {'withTitles' => 'yes'}.merge(params)
+      
+      Collectnik::Items.new(self, get_endpoint(id, params))
     end
 
     def local(type, id, params = {})
