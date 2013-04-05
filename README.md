@@ -1,5 +1,7 @@
 # Collectnik
 
+[![Build Status](https://travis-ci.org/seanredmond/collectnik.png)](https://travis-ci.org/seanredmond/collectnik)
+
 Ruby client for the [NYPL Digital Collections API](http://api.repo.nypl.org/api_documentation)
 
 ## Installation
