@@ -31,10 +31,19 @@ module Collectnik
       @request['perPage'].to_i
     end
 
+    def has_captures?
+      @data['capture'] != nil
+    end
+
     def items
       if @items == nil
-        @items = @data['capture'].map{|i| Collectnik::Item.new(@client, i)}
+        if has_captures? == false
+          @items = []
+        else
+          @items = @data['capture'].map{|i| Collectnik::Item.new(@client, i)}
+        end
       end
+      
       @items
     end
   end

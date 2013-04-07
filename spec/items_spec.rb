@@ -38,6 +38,12 @@ describe Collectnik::Items do
     end
   end
 
+  describe "#has_captures?" do
+    it "should be true" do
+      @items.has_captures?.should be_true
+    end
+  end
+
   describe "#items" do
     before :each do
       @item_list = @items.items
@@ -60,6 +66,26 @@ describe Collectnik::Items do
     describe "#uuid" do
       it "returns the correct uuid" do
         @items.uuid.should eq "510d47e2-8e15-a3d9-e040-e00a18064a99"
+      end
+    end
+
+    describe "#has_captures?" do
+      it "should be false" do
+        @items.has_captures?.should be_false
+      end
+    end
+    
+    describe "#items" do
+      before :each do
+        @item_list = @items.items
+      end
+
+      it "should be an Array" do
+        @item_list.should be_an_instance_of Array
+      end
+
+      it "should be empty" do
+        @item_list.should be_empty
       end
     end
   end
