@@ -1,5 +1,24 @@
 require "collectnik"
 
+ITEMS_510d47e2 = JSON.parse(%q<{
+  "nyplAPI": {
+    "request": {
+      "page": "0",
+      "perPage": "0",
+      "totalPages": "0",
+      "uuid": "510d47e2-8e15-a3d9-e040-e00a18064a99"
+    },
+    "response": {
+      "headers": {
+        "code": "200",
+        "message": "ok",
+        "status": "success"
+      },
+      "numResults": "0"
+    }
+  }
+}>)
+
 ITEMS_5fa75050 = JSON.parse(%q<{
   "nyplAPI":{
     "request":{
