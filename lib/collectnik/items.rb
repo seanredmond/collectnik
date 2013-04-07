@@ -7,6 +7,10 @@ module Collectnik
       @items = nil
     end
 
+    def uuid
+      @request['uuid']
+    end
+
     def num_results
       # The API should return this value as an int
       @data['numResults'].to_i
