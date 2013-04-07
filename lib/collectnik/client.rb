@@ -14,6 +14,15 @@ module Collectnik
       }
     end
 
+    # Retrieves an by uuid.
+    # 
+    # @param id [String] The uuid of the item
+    # @param params [Hash] A Hash of parameters to be passed to the API. Item 
+    #   resources are retrieved with titles by default, which is the opposite 
+    #   of the default behavior of the `items` endpoint. To retrieve the item 
+    #   resources without titles, set use `'withTitles' => 'no'
+    #
+    # @return [Items] An {Items} object.
     def items(id, params = {})
       # Get titles in items by default
       params = {'withTitles' => 'yes'}.merge(params)
