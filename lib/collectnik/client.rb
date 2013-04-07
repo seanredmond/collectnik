@@ -23,11 +23,11 @@ module Collectnik
     #   resources without titles, set use `'withTitles' => 'no'
     #
     # @return [Items] An {Items} object.
-    def items(id, params = {})
+    def item(id, params = {})
       # Get titles in items by default
       params = {'withTitles' => 'yes'}.merge(params)
       
-      Collectnik::Items.new(self, get_endpoint(id, params))
+      Collectnik::Item.new(self, get_endpoint(id, params))
     end
 
     def local(type, id, params = {})
@@ -42,7 +42,7 @@ module Collectnik
 
     def search(term, params = {})
       params.merge!({'q' => term})
-      get_endpoint('search', params)
+      Collectnik::SearchResults.new(self, get_endpoint('search', params))
     end
 
     protected

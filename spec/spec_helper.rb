@@ -1,5 +1,86 @@
 require "collectnik"
 
+SEARCH_BIRDS = JSON.parse(%q<{
+  "nyplAPI":{
+    "request":{
+      "page":"1",
+      "perPage":"10",
+      "search_text":"birds",
+      "totalPages":"1199"
+    },
+    "response":{
+      "headers":{
+        "code":"200",
+        "message":"OK",
+        "status":"success"
+      },
+      "numResults":"11985",
+      "result":[
+        {
+          "imageID":"820261",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?820261",
+          "title":" Wading Birds.",
+          "uuid":"510d47e0-d4fd-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"821523",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?821523",
+          "title":" Toxostoma Curvirostris.",
+          "uuid":"510d47e1-0424-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"820999",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?820999",
+          "title":"The  Communities Of Birds.",
+          "uuid":"510d47e0-dac3-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"821048",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?821048",
+          "title":" Orchard Oriole.",
+          "uuid":"510d47e1-28aa-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"820568",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?820568",
+          "title":" Frigate, And Tropic-Birds.",
+          "uuid":"510d47e0-d92c-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"820808",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?820808",
+          "title":" Great Blue Heron.",
+          "uuid":"510d47e0-d999-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"821616",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?821616",
+          "title":" Tailor-Bird -- Orthot\u00f3mus Longicaudus.",
+          "uuid":"510d47e1-0404-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"820090",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?820090",
+          "title":" Various Birds On Attached Cards.]",
+          "uuid":"510d47e1-3f27-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"820091",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?820091",
+          "title":" Various Birds On Attached Cards.]",
+          "uuid":"510d47e1-3f34-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"820129",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?820129",
+          "title":" Various Kinds Of Birds.",
+          "uuid":"510d47e1-3f72-a3d9-e040-e00a18064a99"
+        }
+      ]
+    }
+  }
+}>)
+
 ITEMS_510d47e2 = JSON.parse(%q<{
   "nyplAPI": {
     "request": {
@@ -222,6 +303,193 @@ MODS_1582665 = JSON.parse(%q<{
             "$":"5fa75050-c6c7-012f-e24b-58d385a7bc34"
           }
         }
+      }
+    }
+  }
+}>)
+
+MODS_510d47e2 = JSON.parse(%q<{
+  "nyplAPI":{
+    "request":{
+      "uuid":{
+        "$":"510d47e2-8e15-a3d9-e040-e00a18064a99"
+      }
+    },
+    "response":{
+      "headers":{
+        "code":{
+          "$":"200"
+        },
+        "message":{
+          "$":"OK"
+        },
+        "status":{
+          "$":"success"
+        }
+      },
+      "mods":{
+        "genre":{
+          "$":"Pochoir prints"
+        },
+        "identifier":[
+          {
+            "$":"1617433",
+            "displayLabel":"Dynix",
+            "type":"local_other"
+          },
+          {
+            "$":"b17540797",
+            "displayLabel":"NYPL catalog ID (B-number)",
+            "type":"local_bnumber"
+          },
+          {
+            "$":"1017240",
+            "displayLabel":"Hades struc ID (legacy)",
+            "type":"local_hades"
+          },
+          {
+            "$":"33333201354160",
+            "displayLabel":"Barcode",
+            "type":"local_barcode"
+          }
+        ],
+        "location":[
+          {
+            "physicalLocation":[
+              {
+                "$":"nn",
+                "authority":"marcorg",
+                "type":"repository"
+              },
+              {
+                "$":"Art and Picture Collection",
+                "type":"division"
+              }
+            ]
+          },
+          {
+            "shelfLocator":{
+              "$":"PC NEW YC-Skyl"
+            }
+          },
+          {
+            "physicalLocation":{
+              "$":"Art and Picture Collection",
+              "type":"division"
+            }
+          }
+        ],
+        "name":{
+          "affiliation":{
+
+          },
+          "authority":"",
+          "namePart":{
+            "$":"Franz Huld"
+          },
+          "role":{
+            "roleTerm":[
+              {
+                "$":"pbl",
+                "authority":"marcrelator",
+                "type":"code",
+                "valueURI":"http://id.loc.gov/vocabulary/relators/pbl"
+              },
+              {
+                "$":"Publisher",
+                "authority":"marcrelator",
+                "type":"text",
+                "valueURI":"http://id.loc.gov/vocabulary/relators/pbl"
+              }
+            ]
+          },
+          "type":"corporate",
+          "valueURI":""
+        },
+        "originInfo":{
+          "place":{
+            "placeTerm":{
+              "$":"New York"
+            }
+          }
+        },
+        "relatedItem":{
+          "identifier":{
+            "$":"e6b85000-c55f-012f-27fc-58d385a7bc34",
+            "type":"uuid"
+          },
+          "relatedItem":{
+            "identifier":{
+              "$":"79d4a650-c52e-012f-67ad-58d385a7bc34",
+              "type":"uuid"
+            },
+            "titleInfo":{
+              "title":{
+                "$":"Mid-Manhattan Picture Collection"
+              }
+            },
+            "type":"host"
+          },
+          "titleInfo":{
+            "title":{
+              "$":"New York City -- skyline"
+            }
+          },
+          "type":"host"
+        },
+        "schemaLocation":"http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd",
+        "subject":[
+          {
+            "topic":{
+              "$":"Sunrises & sunsets -- New York (State) -- New York",
+              "authority":"lctgm"
+            }
+          },
+          {
+            "topic":{
+              "$":"Skyscrapers -- New York (State) -- New York -- 1900-1909",
+              "authority":"lctgm"
+            }
+          },
+          {
+            "cartographics":{
+
+            },
+            "geographic":{
+              "$":"New York (N.Y.) -- 1900-1909",
+              "authority":"naf"
+            }
+          }
+        ],
+        "titleInfo":[
+          {
+            "lang":"eng",
+            "supplied":"no",
+            "title":{
+              "$":"Mid-Manhattan Picture Collection"
+            },
+            "usage":"primary"
+          },
+          {
+            "supplied":"no",
+            "title":{
+              "$":"New York City -- Skyline"
+            },
+            "usage":"primary"
+          },
+          {
+            "lang":"eng",
+            "supplied":"no",
+            "title":{
+              "$":"High buildings in New York at night."
+            },
+            "usage":"primary"
+          }
+        ],
+        "typeOfResource":{
+          "$":"still image"
+        },
+        "version":"3.4"
       }
     }
   }
