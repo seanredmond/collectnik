@@ -14,7 +14,7 @@ module Collectnik
       }
     end
 
-    # Retrieves an by uuid.
+    # Retrieves an item by uuid.
     # 
     # @param id [String] The uuid of the item
     # @param params [Hash] A Hash of parameters to be passed to the API. Item 
