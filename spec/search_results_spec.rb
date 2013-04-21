@@ -55,5 +55,37 @@ describe Collectnik::SearchResults do
         @results_list.first.should be_an_instance_of Collectnik::Item
       end
     end
+
+    describe "#next" do
+      before :each do
+        @client.stub(:get_endpoint).and_return(SEARCH_BIRDS2)
+      end
+
+      it "requests the next page of results" do
+        @client.should_receive(:get_endpoint).
+          with('search', {'q'=>'birds', 'per_page'=>10, 'page'=>2}) {SEARCH_BIRDS2}
+        @results.next
+      end
+
+      it "returns the next page of results as an Array of Items" do
+        @results.next.should be_an_instance_of Array
+      end
+
+      it "returns an Array of Items" do
+        @results.next.first.should be_an_instance_of Collectnik::Item
+      end
+
+      it "updates the stored results" do
+        @results.next.first.uuid.should 
+          be '510d47da-c080-a3d9-e040-e00a18064a99'
+        @results.results.first.uuid.should 
+          be '510d47da-c080-a3d9-e040-e00a18064a99'
+      end
+
+      it "updates the current page" do
+        @results.next
+        @results.current_page.should be 2
+      end
+    end
   end
 end
