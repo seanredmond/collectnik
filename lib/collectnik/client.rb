@@ -40,12 +40,25 @@ module Collectnik
       Collectnik::Mods.new(self, get_endpoint("mods/#{id}", params))
     end
 
+    # Retrieves items that match search criteria (case-insensitive)
+    #
+    # @param term [String] term (or terms to search for). See 
+    #   {http://api.repo.nypl.org/api_documentation API Documentation} for 
+    #   acceptable search string formats
+    # @param params [Hash] Optional parameters to be passed to the GET request.
+    #   Parameters currently accepted by the API are page, per_page and field.
+    #   The field parameter will limit the search to a specific MODS field.
+    #   Currently available fields are identifier, typeOfResource, note,
+    #   title, namePart, place, publisher, topic, geographic, temporal, genre, 
+    #   physicalLocation, and shelfLocator
+    #
+    # @return [SearchResults] A {SearchResults} object.
     def search(term, params = {})
       params.merge!({'q' => term})
       Collectnik::SearchResults.new(self, get_endpoint('search', params))
     end
 
-    protected
+    # protected
     def get_endpoint(path, params)
       path = "#{@@base}/#{@@version_path}/items/#{path}"
       response = @conn.get path, params
