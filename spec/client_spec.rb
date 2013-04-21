@@ -7,7 +7,7 @@ describe Collectnik::Client do
     @client = Collectnik::Client.new('12345')
   end
 
-  describe "#seach" do
+  describe "#search" do
     before :each do
       @client.stub(:get_endpoint) {SEARCH_BIRDS}
       @results = @client.search('birds')
