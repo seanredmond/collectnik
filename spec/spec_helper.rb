@@ -172,6 +172,97 @@ SEARCH_BIRDS2 = JSON.parse(%q<{
   }
 }>)
 
+SEARCH_BIRDS50 = JSON.parse(%q<{
+  "nyplAPI":{
+    "request":{
+      "page":"50",
+      "perPage":"10",
+      "search_text":"birds",
+      "totalPages":"1199"
+    },
+    "response":{
+      "headers":{
+        "code":"200",
+        "message":"OK",
+        "status":"success"
+      },
+      "numResults":"11985",
+      "result":[
+        {
+          "imageID":"1152430",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1152430",
+          "title":" Birds of brilliant plummage.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-bd09-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1152421",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1152421",
+          "title":" Birds of brilliant plummage.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-bcf7-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140730",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140730",
+          "title":" Goldfinch (female).",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c0a5-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140721",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140721",
+          "title":" Chiffchaff (female).",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c093-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140424",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140424",
+          "title":" Oyster catcher.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c218-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140415",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140415",
+          "title":" Pheasant.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c206-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140406",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140406",
+          "title":" Goldfinch.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c1f4-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140370",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140370",
+          "title":" Lapwing.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c1ac-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140343",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140343",
+          "title":" Starling.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c176-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140361",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140361",
+          "title":" Blackcap warbler.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c19a-a3d9-e040-e00a18064a99"
+        }
+      ]
+    }
+  }
+}>)
+
 SEARCH_NO_RESULTS = JSON.parse(%q<{
   "nyplAPI":{
     "request":{

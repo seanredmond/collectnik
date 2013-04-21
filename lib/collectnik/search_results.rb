@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module Collectnik
   # The results of a search as returned by {Client#search} See the 
   # {http://api.repo.nypl.org/api_documentation#api_method_3_doc API 
@@ -66,17 +68,41 @@ module Collectnik
     # a {StopIteration} exception.
     def next
       if current_page + 1 <= total_pages
-        params = {
-          'q' =>  search_text,
-          'per_page' => per_page,
-          'page' => current_page + 1
-        }
-        page = @client.get_endpoint('search', params)
-        initialize(@client, page)
-        @results = @data['result'].map{|i| Collectnik::Item.new(@client, i)}
-        @results
+        page(current_page + 1)
       else
         raise StopIteration
+      end
+    end
+
+    # Get the specific page of results
+    #
+    # @param p [Int] The page to retrieve.
+    # @return [Array<Item>] The next page of results
+    # @raise [BadPageError] if the page requested is outside the range of pages
+    #   in the result set.
+    #
+    # This method both returns the requested page and sets that page as the 
+    # current one. Trying to retrieve a page outside the range of pages in the
+    # result set will raise a BadPageError, as will requesting any page from an
+    # empty result set.
+    def page(p)
+      if num_results > 0
+        if p > 0 && p <= total_pages
+          params = {
+            'q' =>  search_text,
+            'per_page' => per_page,
+            'page' => p
+          }
+          page = @client.get_endpoint('search', params)
+          initialize(@client, page)
+          @results = @data['result'].map{|i| Collectnik::Item.new(@client, i)}
+          @results
+        else
+          raise BadPageError, 
+            "Invalid page requested. Current result set contains pages 1–#{total_pages}"
+        end
+      else
+        raise BadPageError, "Invalid page requested. Current result set is empty"
       end
     end
   end

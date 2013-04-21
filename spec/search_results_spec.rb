@@ -76,15 +76,61 @@ describe Collectnik::SearchResults do
       end
 
       it "updates the stored results" do
-        @results.next.first.uuid.should 
-          be '510d47da-c080-a3d9-e040-e00a18064a99'
-        @results.results.first.uuid.should 
-          be '510d47da-c080-a3d9-e040-e00a18064a99'
+        @results.next.first.uuid.
+          should eq '510d47da-c080-a3d9-e040-e00a18064a99'
+        @results.results.first.uuid.
+          should eq '510d47da-c080-a3d9-e040-e00a18064a99'
       end
 
       it "updates the current page" do
         @results.next
-        @results.current_page.should be 2
+        @results.current_page.should eq 2
+      end
+    end
+
+    describe "#page" do
+      context "with a valid page number" do
+        before :each do
+          @client.stub(:get_endpoint).and_return(SEARCH_BIRDS50)
+        end
+
+        it "requests the correct page of results" do
+          @client.should_receive(:get_endpoint).
+            with('search', {'q'=>'birds', 'per_page'=>10, 'page'=>50})
+          @results.page(50)
+        end
+
+        it "returns the next page of results as an Array of Items" do
+          @results.next.should be_an_instance_of Array
+        end
+
+        it "returns an Array of Items" do
+          @results.next.first.should be_an_instance_of Collectnik::Item
+        end
+
+        it "updates the stored results" do
+          @results.page(50).first.uuid.
+            should eq '510d47da-bd09-a3d9-e040-e00a18064a99'
+          @results.results.first.uuid.
+            should eq '510d47da-bd09-a3d9-e040-e00a18064a99'
+        end
+
+        it "updates the current page" do
+          @results.next
+          @results.current_page.should eq 50
+        end
+      end
+
+      context "with an invalid page number" do
+        it "raises BadPageError if the page is too low" do
+          expect { @results.page(0)}.to raise_error(Collectnik::BadPageError, 
+            "Invalid page requested. Current result set contains pages 1–1199")
+        end
+
+        it "raises BadPageError if the page is too high" do
+          expect { @results.page(5000)}.to raise_error(Collectnik::BadPageError, 
+            "Invalid page requested. Current result set contains pages 1–1199")
+        end
       end
     end
   end
@@ -131,6 +177,13 @@ describe Collectnik::SearchResults do
     describe "#next" do
       it "raises StopIteration" do
         expect { @results.next }.to raise_error(StopIteration)
+      end
+    end
+
+    describe "#page" do
+      it "raises BadPageError" do
+        expect { @results.page(1) }.to raise_error(Collectnik::BadPageError, 
+          'Invalid page requested. Current result set is empty')
       end
     end
   end
