@@ -81,6 +81,97 @@ SEARCH_BIRDS = JSON.parse(%q<{
   }
 }>)
 
+SEARCH_BIRDS2 = JSON.parse(%q<{
+  "nyplAPI":{
+    "request":{
+      "page":"2",
+      "perPage":"10",
+      "search_text":"birds",
+      "totalPages":"1199"
+    },
+    "response":{
+      "headers":{
+        "code":"200",
+        "message":"OK",
+        "status":"success"
+      },
+      "numResults":"11985",
+      "result":[
+        {
+          "imageID":"1140323",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140323",
+          "title":" Blackcap.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c080-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1133231",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1133231",
+          "title":" Bearded tit.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c083-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1133204",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1133204",
+          "title":"The  ptarmign.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c04d-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1133213",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1133213",
+          "title":" Jackdaw.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c05f-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1133222",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1133222",
+          "title":" Common tern.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c071-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140322",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140322",
+          "title":" Blue titmouse.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c07e-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140304",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140304",
+          "title":" Linnet.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c05a-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1140313",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1140313",
+          "title":" Golden eagle.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c06c-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1133230",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1133230",
+          "title":" Blackbird.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c081-a3d9-e040-e00a18064a99"
+        },
+        {
+          "imageID":"1133203",
+          "itemLink":"http://digitalgallery.nypl.org/nypldigital/id?1133203",
+          "title":" Mouse sparrow.",
+          "typeOfResource":"still image",
+          "uuid":"510d47da-c04b-a3d9-e040-e00a18064a99"
+        }
+      ]
+    }
+  }
+}>)
+
 ITEMS_510d47e2 = JSON.parse(%q<{
   "nyplAPI": {
     "request": {
