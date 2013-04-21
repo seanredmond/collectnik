@@ -88,4 +88,50 @@ describe Collectnik::SearchResults do
       end
     end
   end
+
+  context "with no results" do
+    before :each do
+      @results = Collectnik::SearchResults.new(@client, SEARCH_NO_RESULTS)
+    end
+
+    describe "#num_results" do
+      it "returns 0" do
+        @results.num_results.should eq 0
+      end
+    end
+
+    describe "#current_page" do
+      it "returns the correct page" do
+        @results.current_page.should eq 0
+      end
+    end
+
+    describe "#total_pages" do
+      it "returns the corect number of pages of results" do
+        @results.total_pages.should eq 0
+      end
+    end
+
+    describe "#per_page" do
+      it "returns the correct number of results per page" do
+        @results.per_page.should eq 0
+      end
+    end
+
+    describe "#results" do
+      it "returns an Array" do
+        @results.results.should be_an_instance_of Array
+      end
+
+      it "returns an empty Array" do
+        @results.results.should be_empty
+      end
+    end
+
+    describe "#next" do
+      it "raises StopIteration" do
+        expect { @results.next }.to raise_error(StopIteration)
+      end
+    end
+  end
 end

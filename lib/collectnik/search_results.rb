@@ -45,9 +45,12 @@ module Collectnik
     end
 
     # @return [Array<Item>] The current page of results.
+    #
+    # If the search returned no results, this method returns an empty array.
     def results
       if @results == nil
-        @results = @data['result'].map{|i| Collectnik::Item.new(@client, i)}
+        @results = @data.fetch('result', []).
+          map{|i| Collectnik::Item.new(@client, i)}
       end
       
       @results
@@ -56,9 +59,11 @@ module Collectnik
     # Get the next page of results
     #
     # @return [Array<Item>] The next page of results
+    # @raise [StopIteration] if all pages have been exhausted.
     #
     # This method both returns the next page and sets the next page as the 
-    # current one.
+    # current one. Trying to retrieve a page beyond the last page will result in
+    # a {StopIteration} exception.
     def next
       if current_page + 1 <= total_pages
         params = {
@@ -70,6 +75,8 @@ module Collectnik
         initialize(@client, page)
         @results = @data['result'].map{|i| Collectnik::Item.new(@client, i)}
         @results
+      else
+        raise StopIteration
       end
     end
   end

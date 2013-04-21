@@ -172,6 +172,25 @@ SEARCH_BIRDS2 = JSON.parse(%q<{
   }
 }>)
 
+SEARCH_NO_RESULTS = JSON.parse(%q<{
+  "nyplAPI":{
+    "request":{
+      "page":"0",
+      "perPage":"0",
+      "search_text":"qwertyuiop",
+      "totalPages":"0"
+    },
+    "response":{
+      "headers":{
+        "code":"200",
+        "message":"OK",
+        "status":"success"
+      },
+      "numResults":"0"
+    }
+  }
+}>)
+
 ITEMS_510d47e2 = JSON.parse(%q<{
   "nyplAPI": {
     "request": {
