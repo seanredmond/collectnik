@@ -25,6 +25,12 @@ Or install it yourself as:
     # Initialize a client
     client = Collectnik::Client.new('yourtoken')
 
+    # Make a search
+    birds = client.search('birds')
+
+    # Work with the results
+    birds.results.first.title
+
     # Return Captures for a UUID
     client.items('5fa75050-c6c7-012f-e24b-58d385a7bc34')
 
