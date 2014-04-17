@@ -6,10 +6,9 @@ rvm:
   - 1.9.3
   - 1.9.2
   - jruby-19mode # JRuby in 1.9 mode
-  - rbx-1.9
+  - rbx-2.0.0
   - 1.8.7
   - jruby-18mode # JRuby in 1.8 mode
-  - rbx-1.8
 addons:
    code_climate:
      repo_token: 0cf1ec8cc5f26e7ba43e43f6acf51011d1f24bc7a1894e1e658a26ef35d2336
