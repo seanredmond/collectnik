@@ -1,3 +1,6 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 require "collectnik"
 
 SEARCH_BIRDS = JSON.parse(%q<{
